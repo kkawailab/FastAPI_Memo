@@ -1,0 +1,22 @@
+# FastAPIメモ帳アプリケーションの依存関係
+# これらのパッケージをインストールするには: pip install -r requirements.txt
+
+# FastAPI: 高速でモダンなWebフレームワーク
+# Pythonの型ヒントを使って自動的にAPIドキュメントを生成します
+fastapi==0.115.5
+
+# Uvicorn: FastAPIアプリケーションを実行するためのASGIサーバー
+# [standard]は追加の依存関係（websockets、httptools等）を含むオプション
+uvicorn[standard]==0.32.1
+
+# SQLAlchemy: PythonのORM（Object-Relational Mapping）ライブラリ
+# データベースをPythonのオブジェクトとして扱えるようにします
+sqlalchemy==2.0.36
+
+# Pydantic: データ検証とシリアライゼーションのためのライブラリ
+# FastAPIでリクエスト/レスポンスの型チェックに使用されます
+pydantic==2.10.3
+
+# python-multipart: フォームデータとファイルアップロードのサポート
+# FastAPIでフォームデータを扱う場合に必要
+python-multipart==0.0.18
