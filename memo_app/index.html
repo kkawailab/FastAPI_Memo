@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メモ帳アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>メモ帳アプリ</h1>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="メモを検索...">
+                <button onclick="searchMemos()">検索</button>
+                <button onclick="loadMemos()">すべて表示</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="memo-form">
+                <h2>新しいメモ</h2>
+                <input type="text" id="memoTitle" placeholder="タイトル" maxlength="100">
+                <textarea id="memoContent" placeholder="内容を入力してください..." rows="4"></textarea>
+                <button onclick="createMemo()" class="btn-primary">メモを作成</button>
+            </div>
+
+            <div class="memo-list">
+                <h2>メモ一覧</h2>
+                <div id="memoContainer" class="memo-container">
+                    <!-- メモがここに動的に表示されます -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 編集用モーダル -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>メモを編集</h2>
+            <input type="hidden" id="editMemoId">
+            <input type="text" id="editMemoTitle" placeholder="タイトル" maxlength="100">
+            <textarea id="editMemoContent" placeholder="内容を入力してください..." rows="4"></textarea>
+            <div class="modal-buttons">
+                <button onclick="updateMemo()" class="btn-primary">更新</button>
+                <button onclick="closeEditModal()" class="btn-secondary">キャンセル</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -5,8 +5,7 @@
 from fastapi import FastAPI, HTTPException, Depends  # FastAPI: Webフレームワーク、HTTPException: エラー処理、Depends: 依存性注入
 from fastapi.middleware.cors import CORSMiddleware  # CORS: 異なるドメインからのアクセスを許可
 from sqlalchemy import create_engine, Column, Integer, String, DateTime, Text  # SQLAlchemy: データベース操作用ライブラリ
-from sqlalchemy.ext.declarative import declarative_base  # データベースモデルの基底クラス作成用
-from sqlalchemy.orm import sessionmaker, Session  # データベースセッション管理用
+from sqlalchemy.orm import declarative_base, sessionmaker, Session  # データベースモデルとセッション管理用
 from pydantic import BaseModel  # データ検証用の基底クラス
 from datetime import datetime  # 日時を扱うためのクラス
 from typing import List, Optional  # 型ヒント用（リストやオプショナル値の型定義）
